@@ -2,8 +2,10 @@ from flask import Flask, render_template, request, jsonify, send_file
 import yt_dlp
 import os
 import re
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 DOWNLOADS = "Downloads"
 os.makedirs(DOWNLOADS, exist_ok=True)
@@ -58,3 +60,4 @@ def get_file(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
