@@ -26,9 +26,6 @@ def download():
         if not video_url:
             return jsonify({"status": "error", "message": "No URL provided"}), 400
 
-        # 👇 path to your ffmpeg folder
-        ffmpeg_path = r"C:\ffmpeg"
-
         ydl_opts = {
             "format": "bestaudio/best",
             "outtmpl": os.path.join(DOWNLOADS, "%(title)s.%(ext)s"),
@@ -60,4 +57,5 @@ def get_file(filename):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
